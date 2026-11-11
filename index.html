@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DKAI | AI help for small local businesses</title>
+<meta name="description" content="DKAI helps small local businesses choose, set up and run AI tools that answer customers, book work, handle paperwork and win reviews. Plain language, no tech skills needed.">
+<link rel="canonical" href="https://dkai.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dkai.io/">
+<meta property="og:title" content="DKAI | AI help for small local businesses">
+<meta property="og:description" content="AI tools chosen, set up and looked after for you, so the busywork gets done while you run the business.">
+<meta name="theme-color" content="#f8faff">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Royal blue and yellow palette. Names are roles: clay = main accent (blue), green = dark panels (navy). */
+  --cream: #f8faff;
+  --sand: #edf2fd;
+  --card: #ffffff;
+  --ink: #14213d;
+  --muted: #56617a;
+  --clay: #2456e6;
+  --clay-dark: #1a44c2;
+  --peach: #dfe8ff;
+  --green: #14213d;
+  --mint: #e2e8f6;
+  --sun: #ffc93c;
+  --butter: #fff3cf;
+  --line: #dbe3f3;
+  --radius: 24px;
+  --wrap: 1100px;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "DM Sans", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--cream);
+}
+svg { max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+p { margin: 0; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+section { padding: 96px 0; scroll-margin-top: 76px; }
+.skip {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--green); color: #fff; padding: 10px 18px; border-radius: 999px; font-weight: 600; z-index: 100;
+}
+.skip:focus { left: 12px; top: 12px; }
+:focus-visible { outline: 3px solid var(--clay); outline-offset: 3px; border-radius: 8px; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.02rem;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--clay); color: #fff; box-shadow: 0 8px 20px rgba(36, 86, 230, .28); }
+.btn-primary:hover { background: var(--clay-dark); }
+.btn-soft { background: transparent; border-color: var(--ink); color: var(--ink); }
+.btn-soft:hover { background: var(--ink); color: var(--cream); }
+.btn-small { padding: 10px 22px; font-size: .95rem; box-shadow: none; }
+
+.eyebrow {
+  display: inline-block;
+  font-weight: 700;
+  font-size: .9rem;
+  color: var(--green);
+  background: var(--mint);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+.section-head { max-width: 700px; margin-bottom: 52px; }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-head h2 { font-size: clamp(2rem, 4.4vw, 3rem); }
+.section-head p { margin-top: 18px; font-size: 1.15rem; color: var(--muted); }
+
+/* Header */
+header.site {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(248, 250, 255, .92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.logo {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.logo span { color: var(--clay); }
+.nav-links { display: flex; align-items: center; gap: 30px; }
+.nav-links a:not(.btn) { color: var(--muted); text-decoration: none; font-size: 1rem; font-weight: 500; }
+.nav-links a:not(.btn):hover { color: var(--ink); }
+
+/* Hero */
+.hero { padding: 76px 0 100px; position: relative; overflow: hidden; }
+.hero::before, .hero::after {
+  content: ""; position: absolute; border-radius: 50%; z-index: 0;
+}
+.hero::before { width: 520px; height: 520px; background: var(--peach); right: -140px; top: -120px; }
+.hero::after { width: 260px; height: 260px; background: var(--butter); left: -110px; bottom: -110px; }
+.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr .85fr; gap: 60px; align-items: center; }
+.hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.5rem); margin-bottom: 24px; }
+.hero h1 em { font-style: italic; color: var(--clay); }
+.hero .lede { font-size: clamp(1.12rem, 1.9vw, 1.3rem); color: var(--muted); max-width: 31em; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.hero-note { margin-top: 20px; font-size: .97rem; color: var(--muted); }
+
+.day {
+  background: var(--card);
+  border-radius: 28px;
+  padding: 28px 26px 24px;
+  box-shadow: 0 24px 60px rgba(20, 33, 61,.14);
+  max-width: 390px;
+  margin-left: auto;
+  transform: rotate(1.5deg);
+}
+.day-title { font-family: var(--display); font-weight: 600; font-size: 1.25rem; margin-bottom: 4px; }
+.day-sub { font-size: .92rem; color: var(--muted); margin-bottom: 18px; }
+.day ul { list-style: none; margin: 0; padding: 0; }
+.day li {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 14px; border-radius: 16px; margin-bottom: 8px;
+  font-size: .98rem; line-height: 1.35; font-weight: 500;
+}
+.day li:nth-child(4n+1) { background: var(--peach); }
+.day li:nth-child(4n+2) { background: var(--mint); }
+.day li:nth-child(4n+3) { background: var(--butter); }
+.day li:nth-child(4n+4) { background: var(--sand); }
+.tick {
+  flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--green);
+  display: grid; place-items: center;
+}
+.tick::after {
+  content: ""; width: 10px; height: 5px; margin-top: -2px;
+  border-left: 2.5px solid #fff; border-bottom: 2.5px solid #fff; transform: rotate(-45deg);
+}
+.day-foot { margin-top: 14px; font-size: .88rem; color: var(--muted); text-align: center; }
+
+/* Services */
+.services { background: var(--sand); border-radius: 48px 48px 0 0; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 30px 28px 32px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(20, 33, 61,.1); }
+.icon {
+  width: 56px; height: 56px; border-radius: 18px;
+  display: grid; place-items: center; margin-bottom: 20px;
+}
+.icon svg { width: 28px; height: 28px; fill: none; stroke: var(--ink); stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.card:nth-child(3n+1) .icon { background: var(--peach); }
+.card:nth-child(3n+2) .icon { background: var(--mint); }
+.card:nth-child(3n+3) .icon { background: var(--butter); }
+.card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+.card p { color: var(--muted); font-size: 1rem; }
+.card ul { margin: 14px 0 0; padding: 0; list-style: none; font-size: .96rem; }
+.card li { padding-left: 20px; position: relative; margin-top: 6px; }
+.card li::before { content: ""; position: absolute; left: 2px; top: .68em; width: 7px; height: 7px; border-radius: 50%; background: var(--clay); }
+.unsure {
+  margin-top: 22px; background: var(--green); color: #fff;
+  border-radius: var(--radius); padding: 30px 32px;
+  display: flex; flex-wrap: wrap; gap: 18px 32px; align-items: center; justify-content: space-between;
+}
+.unsure h3 { font-size: 1.45rem; margin-bottom: 6px; }
+.unsure p { color: #c9d1de; max-width: 36em; }
+.unsure .btn { background: var(--sun); color: var(--ink); flex: none; }
+
+/* Steps */
+.how { background: var(--sand); padding-top: 40px; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; list-style: none; padding: 0; margin: 0; counter-reset: step; }
+.steps li { counter-increment: step; }
+.steps li::before {
+  content: counter(step);
+  display: grid; place-items: center;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--clay); color: #fff;
+  font-family: var(--display); font-weight: 700; font-size: 1.4rem;
+  margin-bottom: 18px;
+}
+.steps h3 { font-size: 1.35rem; margin-bottom: 8px; }
+.steps p { color: var(--muted); font-size: 1rem; }
+
+/* Promises */
+.promise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.promise-grid h2 { font-size: clamp(2rem, 4.4vw, 3rem); }
+.promise-grid .intro { margin-top: 18px; font-size: 1.15rem; color: var(--muted); }
+.promises { list-style: none; margin: 0; padding: 0; }
+.promises li {
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+  padding: 20px 22px 20px 62px; position: relative; margin-bottom: 12px;
+}
+.promises li .tick { position: absolute; left: 20px; top: 22px; }
+.promises strong { display: block; font-size: 1.08rem; }
+.promises span.txt { color: var(--muted); font-size: .98rem; }
+
+/* FAQ */
+.faq { background: var(--sand); border-radius: 48px; margin: 0 16px; }
+.faq-list { max-width: 800px; margin: 0 auto; }
+details { background: var(--card); border-radius: 20px; margin-bottom: 12px; }
+summary {
+  cursor: pointer; list-style: none;
+  padding: 20px 60px 20px 24px; position: relative;
+  font-weight: 700; font-size: 1.1rem;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%);
+  width: 30px; height: 30px; border-radius: 50%; background: var(--peach); color: var(--clay-dark);
+  display: grid; place-items: center; font-size: 1.3rem; font-weight: 600; line-height: 1;
+}
+details[open] summary::after { content: "\2212"; }
+details p { padding: 0 24px 22px; color: var(--muted); }
+
+/* CTA */
+.cta-box {
+  background: var(--clay); color: #fff; border-radius: 40px;
+  padding: 64px 56px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 44px; align-items: center;
+  position: relative; overflow: hidden;
+}
+.cta-box::before { content: ""; position: absolute; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,.1); left: -90px; bottom: -150px; }
+.cta-box > * { position: relative; }
+.cta-box h2 { font-size: clamp(2.1rem, 5vw, 3.3rem); }
+.cta-box .big { margin-top: 16px; font-size: 1.2rem; color: #e1e9ff; max-width: 28em; }
+.contact-card { background: var(--cream); color: var(--ink); border-radius: 28px; padding: 30px 28px; }
+.contact-card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.contact-card p { font-size: 1rem; color: var(--muted); margin-bottom: 20px; }
+.contact-card .btn { width: 100%; text-align: center; background: var(--green); color: #fff; }
+.contact-card .btn:hover { background: #0c1528; }
+.contact-card .alt { margin: 14px 0 0; font-size: .95rem; text-align: center; }
+
+footer { padding: 36px 0 44px; font-size: .95rem; color: var(--muted); }
+.foot { display: flex; flex-wrap: wrap; gap: 12px 30px; justify-content: space-between; align-items: center; }
+
+@media (max-width: 960px) {
+  section { padding: 68px 0; }
+  .hero { padding: 48px 0 72px; }
+  .hero-grid, .promise-grid, .cta-box { grid-template-columns: 1fr; }
+  .hero-grid { gap: 44px; }
+  .day { margin: 0 auto; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); gap: 34px 22px; }
+  .promise-grid { gap: 32px; }
+  .cta-box { padding: 48px 36px; }
+  .nav-links a:not(.btn) { display: none; }
+}
+@media (max-width: 620px) {
+  body { font-size: 17px; }
+  .cards, .steps { grid-template-columns: 1fr; }
+  .services { border-radius: 32px 32px 0 0; }
+  .faq { border-radius: 32px; margin: 0 8px; }
+  .cta-box { padding: 40px 24px; border-radius: 30px; }
+  .cta-row .btn, .unsure .btn { width: 100%; text-align: center; }
+  .hero::before { width: 320px; height: 320px; right: -160px; top: -100px; }
+  .day { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .card { transition: none; }
+  .btn:hover, .card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="DKAI home">dk<span>ai</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">What I set up</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">Questions</a>
+      <a class="btn btn-primary btn-small" href="#contact">Book a free chat</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">AI help for small local businesses</span>
+      <h1>Let AI handle the busywork. You do the work you <em>love</em>.</h1>
+      <p class="lede">I help local business owners choose, set up and look after AI tools that answer customers, book work and clear the paperwork. No tech skills needed.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Book a free chat</a>
+        <a class="btn btn-soft" href="#services">See what's possible</a>
+      </div>
+      <p class="hero-note">One person, plain language, and nothing goes live until you say so.</p>
+    </div>
+    <div class="day" role="img" aria-label="Example of a day's tasks handled by AI tools: a missed call answered by text, a visit booked, a quote drafted, an invoice reminder sent and a review request sent.">
+      <p class="day-title">While you were working</p>
+      <p class="day-sub">An example day, handled for you</p>
+      <ul>
+        <li><span class="tick"></span>Missed call answered by text in under a minute</li>
+        <li><span class="tick"></span>Thursday 9am visit booked on your calendar</li>
+        <li><span class="tick"></span>Quote drafted and waiting for your OK</li>
+        <li><span class="tick"></span>Friendly reminder sent on an unpaid invoice</li>
+        <li><span class="tick"></span>Happy customer asked for a Google review</li>
+      </ul>
+      <p class="day-foot">You approved the wording once. It does the rest.</p>
+    </div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What I set up</span>
+      <h2>The right AI tool for the job, not one tool for every job.</h2>
+      <p>Every business leaks time somewhere different. These are the places AI helps most. We start with the one that matters to you.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 11h6M9 14h4"/></svg></div>
+        <h3>Calls and messages</h3>
+        <p>Nobody who contacts you is left waiting.</p>
+        <ul>
+          <li>Instant text back on missed calls</li>
+          <li>An AI receptionist when you can't pick up</li>
+          <li>Website and social chat answered</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17M9 15l2 2 4-4"/></svg></div>
+        <h3>Booking and reminders</h3>
+        <p>Your calendar fills itself and people show up.</p>
+        <ul>
+          <li>Customers pick a time themselves</li>
+          <li>Reminders the day before</li>
+          <li>Easy rescheduling without phone tag</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></svg></div>
+        <h3>Quotes and invoices</h3>
+        <p>Paperwork that used to eat your evenings.</p>
+        <ul>
+          <li>Quotes drafted from photos and notes</li>
+          <li>Invoices sent the minute you finish</li>
+          <li>Polite follow-ups on late payers</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8L3.5 9.700l5.9-.9z"/></svg></div>
+        <h3>Reviews and marketing</h3>
+        <p>More people find you, and like what they see.</p>
+        <ul>
+          <li>Review requests after every job</li>
+          <li>Replies drafted for each review</li>
+          <li>Posts, emails and offers written in your voice</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.500" y="6" width="17" height="13" rx="3"/><path d="M4 8l8 6 8-6"/></svg></div>
+        <h3>Inbox and admin</h3>
+        <p>The small office jobs nobody has time for.</p>
+        <ul>
+          <li>Email sorted and replies drafted</li>
+          <li>Details copied between your systems</li>
+          <li>Notes and summaries from calls and meetings</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.800 4.700L18.500 9.500l-4.700 1.800L12 16l-1.800-4.700L5.500 9.500l4.700-1.800z"/><path d="M18.500 15.500l.8 2.200 2.200.8-2.200.8-.8 2.200-.8-2.200-2.200-.8 2.200-.8z"/></svg></div>
+        <h3>Your own AI assistant</h3>
+        <p>An assistant that knows your business.</p>
+        <ul>
+          <li>Loaded with your prices, services and policies</li>
+          <li>Answers staff and customer questions</li>
+          <li>Hands-on training for you and your team</li>
+        </ul>
+      </div>
+    </div>
+    <div class="unsure">
+      <div>
+        <h3>Not sure what you need?</h3>
+        <p>Most owners aren't, and that's fine. Tell me where your week goes and I'll tell you honestly whether AI can help.</p>
+      </div>
+      <a class="btn" href="#contact">Ask me anything</a>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Small steps, real numbers.</h2>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>We talk</h3>
+        <p>A free, friendly call about how your days run and where time and money slip away. I listen. No sales pitch.</p>
+      </li>
+      <li>
+        <h3>I make a short plan</h3>
+        <p>One to three fixes, ranked by what they're worth to you, with a clear price before anything starts.</p>
+      </li>
+      <li>
+        <h3>I set it up</h3>
+        <p>I build and test everything, using tools you already pay for wherever they can do the job. You approve the wording.</p>
+      </li>
+      <li>
+        <h3>I keep it running</h3>
+        <p>I watch it closely after launch, send you a one-page report each month and adjust as your business changes.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="promises">
+  <div class="wrap promise-grid">
+    <div>
+      <span class="eyebrow">Working with me</span>
+      <h2>Helpful tech, without the tech talk.</h2>
+      <p class="intro">You shouldn't have to become an AI expert to benefit from it. My job is to make it work in your business and to stay out of your way.</p>
+    </div>
+    <ul class="promises">
+      <li><span class="tick"></span><strong>Plain language</strong><span class="txt">No jargon, no buzzwords. If I can't explain it simply, I won't sell it to you.</span></li>
+      <li><span class="tick"></span><strong>What you already own comes first</strong><span class="txt">If software you pay for can do the job, I set that up before suggesting anything new.</span></li>
+      <li><span class="tick"></span><strong>You approve everything</strong><span class="txt">Nothing reaches a customer until you've read it and said yes.</span></li>
+      <li><span class="tick"></span><strong>It stays yours</strong><span class="txt">Your phone number, accounts and customer list remain yours. I never ask for passwords.</span></li>
+      <li><span class="tick"></span><strong>Easy to stop</strong><span class="txt">If it isn't earning its keep, we switch it off.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Questions</span>
+      <h2>What owners ask first.</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>Do I need to be good with technology?</summary>
+        <p>No. If you can send a text, you can use what I set up. I do the building, testing and upkeep, and I show you the few things you need to know.</p>
+      </details>
+      <details>
+        <summary>Will my customers feel like they're talking to a robot?</summary>
+        <p>The goal is the opposite. AI covers the moments you can't, such as a missed call or a late-night question, in wording you've approved. Anything that needs you still comes to you.</p>
+      </details>
+      <details>
+        <summary>What if it gets something wrong?</summary>
+        <p>You approve every message before it goes live and give me a list of things it must never say. AI assistants take details and hand off to you. They don't quote prices or make promises for you.</p>
+      </details>
+      <details>
+        <summary>What does it cost?</summary>
+        <p>It depends on what we set up, so the first call is free and you get a clear price before any work starts. We compare it with what the problem costs you now, using your own numbers.</p>
+      </details>
+      <details>
+        <summary>I already pay for software. Do I have to switch?</summary>
+        <p>Usually not. I check what your current tools can already do. Often the feature is there and just needs setting up properly.</p>
+      </details>
+      <details>
+        <summary>I don't have time for a big project.</summary>
+        <p>Neither do most owners. We start with one small fix, and your part is mostly answering a few questions and approving the wording.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <h2>Let's find your first hour back.</h2>
+        <p class="big">Tell me a little about your business. I'll come back with honest ideas, even if the answer is "you don't need this yet."</p>
+      </div>
+      <div class="contact-card">
+        <h3>Book a free chat</h3>
+        <p>Send a quick note with what you do and the best time to reach you. I reply within one business day.</p>
+        <!-- CONTACT: replace hello@dkai.io with the real address, and add a phone number below if wanted -->
+        <a class="btn" href="mailto:hello@dkai.io?subject=Free%20chat%20about%20AI%20for%20my%20business">Email David</a>
+        <p class="alt"><a href="mailto:hello@dkai.io">hello@dkai.io</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>&copy; 2026 DKAI. AI tools set up and looked after for small local businesses.</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+</body>
+</html>
