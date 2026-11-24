@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | DKAI</title>
+<meta name="description" content="Privacy Policy for DKAI, operated by David Karle. How we collect, use, and share information, including text message consent.">
+<link rel="canonical" href="https://dkai.io/privacy-policy">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dkai.io/privacy-policy">
+<meta property="og:title" content="Privacy Policy | DKAI">
+<meta property="og:description" content="How DKAI collects, uses, and shares information, including text message consent.">
+<meta name="theme-color" content="#f8faff">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f8faff;
+  --sand: #edf2fd;
+  --card: #ffffff;
+  --ink: #14213d;
+  --muted: #56617a;
+  --clay: #2456e6;
+  --clay-dark: #1a44c2;
+  --peach: #dfe8ff;
+  --green: #14213d;
+  --mint: #e2e8f6;
+  --sun: #ffc93c;
+  --line: #dbe3f3;
+  --radius: 24px;
+  --wrap: 1100px;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "DM Sans", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--cream);
+}
+a { color: inherit; }
+h1, h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+p { margin: 0; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+.skip {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--green); color: #fff; padding: 10px 18px; border-radius: 999px; font-weight: 600; z-index: 100;
+}
+.skip:focus { left: 12px; top: 12px; }
+:focus-visible { outline: 3px solid var(--clay); outline-offset: 3px; border-radius: 8px; }
+
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.02rem;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--clay); color: #fff; box-shadow: 0 8px 20px rgba(36, 86, 230, .28); }
+.btn-primary:hover { background: var(--clay-dark); }
+.btn-small { padding: 10px 22px; font-size: .95rem; box-shadow: none; }
+
+.eyebrow {
+  display: inline-block;
+  font-weight: 700;
+  font-size: .9rem;
+  color: var(--green);
+  background: var(--mint);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+header.site {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(248, 250, 255, .92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.logo {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.logo span { color: var(--clay); }
+.nav-links { display: flex; align-items: center; gap: 30px; }
+.nav-links a:not(.btn) { color: var(--muted); text-decoration: none; font-size: 1rem; font-weight: 500; }
+.nav-links a:not(.btn):hover { color: var(--ink); }
+
+.legal { padding: 72px 0 96px; }
+.legal-inner { max-width: 740px; }
+.legal h1 { font-size: clamp(2.4rem, 5.6vw, 3.6rem); margin-bottom: 22px; }
+.legal h2 { font-size: clamp(1.35rem, 2.6vw, 1.75rem); margin: 36px 0 12px; }
+.legal p { margin: 0 0 16px; overflow-wrap: break-word; }
+.legal a { color: var(--clay-dark); text-underline-offset: 3px; }
+.legal a:hover { color: var(--clay); }
+.legal .updated {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .98rem;
+}
+
+footer { padding: 36px 0 44px; font-size: .95rem; color: var(--muted); border-top: 1px solid var(--line); }
+.foot { display: flex; flex-wrap: wrap; gap: 12px 30px; justify-content: space-between; align-items: center; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
+.foot-links a[aria-current="page"] { color: var(--ink); font-weight: 700; }
+
+@media (max-width: 960px) {
+  .legal { padding: 48px 0 72px; }
+  .nav-links a:not(.btn) { display: none; }
+}
+@media (max-width: 620px) {
+  body { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+  .btn:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site" id="top">
+  <div class="wrap nav">
+    <a class="logo" href="/" aria-label="DKAI home">dk<span>ai</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#services">What I set up</a>
+      <a href="/#how">How it works</a>
+      <a href="/#faq">Questions</a>
+      <a class="btn btn-primary btn-small" href="https://calendar.app.google/oLzxdZLnhbWLQSXK8" target="_blank" rel="noopener">Book a free chat</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <article class="legal">
+    <div class="wrap">
+      <div class="legal-inner">
+        <span class="eyebrow">Legal</span>
+        <h1>Privacy Policy</h1>
+        <p>David Karle, a sole proprietor doing business as DKAI ("DKAI," "I," "me," or "we"), operates the website <a href="https://dkai.io">https://dkai.io</a> and related services that help small local businesses choose, set up, and look after AI tools.</p>
+        <p>This Privacy Policy explains what information we collect, how we use it, and the choices you have. It applies to the website, emails, calls, and text messages you exchange with us.</p>
+        <p>If you have questions, or you want us to update or delete your information, contact us at <a href="mailto:david@dkai.io">david@dkai.io</a> or <a href="tel:+18088078838">(808) 807-8838</a>, or write to 1604 E 33rd St, Vancouver, WA 98663.</p>
+
+        <h2>Information we collect</h2>
+        <p>We collect information you give us when you use the website, fill out a form, email or call us, book a conversation, or opt in to text messages. This may include your name, business name, mobile phone number, email address, city or service area, and details about your business and what you want help with.</p>
+        <p>We may also collect basic technical information from your use of the website, such as browser type, device type, and pages visited, to operate and improve the site.</p>
+
+        <h2>How we use information</h2>
+        <p>We use this information to respond to you, explain and demonstrate DKAI services, schedule conversations and product demos, provide the services you ask for, send service-related and demo text messages you have opted into, and improve how we work.</p>
+
+        <h2>Text messaging and SMS consent</h2>
+        <p>If you opt in to text messages, we use your mobile number to send the messages described in our <a href="/sms-terms">Mobile Messaging Terms</a>.</p>
+        <p>Mobile numbers and SMS opt-in consent are not shared with or sold to third parties or affiliates for marketing or promotional purposes.</p>
+        <p>We share information only with service providers that help us operate the website, communications, and business (for example hosting and phone/text software), and only as needed to provide our services or as required by law.</p>
+
+        <h2>Your choices</h2>
+        <p>You can opt out of DKAI text messages at any time by replying STOP. You can also email <a href="mailto:david@dkai.io">david@dkai.io</a> to ask us to update or delete your information, subject to any records we must keep.</p>
+
+        <h2>Changes</h2>
+        <p>We may update this policy from time to time. The "Last updated" date at the bottom will change when we do. The current version will be posted at <a href="https://dkai.io/privacy-policy">https://dkai.io/privacy-policy</a>.</p>
+        <p class="updated">Last updated: November 24, 2026.</p>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>&copy; 2026 DKAI. AI tools set up and looked after for small local businesses.</span>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="/privacy-policy" aria-current="page">Privacy Policy</a>
+      <a href="/sms-terms">SMS Terms</a>
+      <a href="#top">Back to top</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
