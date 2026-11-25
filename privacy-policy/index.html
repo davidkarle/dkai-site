@@ -126,6 +126,7 @@ footer { padding: 36px 0 44px; font-size: .95rem; color: var(--muted); border-to
 .foot { display: flex; flex-wrap: wrap; gap: 12px 30px; justify-content: space-between; align-items: center; }
 .foot-links { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
 .foot-links a[aria-current="page"] { color: var(--ink); font-weight: 700; }
+.foot-contact { flex: 1 0 100%; display: flex; flex-wrap: wrap; gap: 2px 16px; margin: 0; font-size: .86rem; line-height: 1.45; }
 
 @media (max-width: 960px) {
   .legal { padding: 48px 0 72px; }
@@ -191,6 +192,12 @@ footer { padding: 36px 0 44px; font-size: .95rem; color: var(--muted); border-to
 
 <footer>
   <div class="wrap foot">
+    <p class="foot-contact">
+      <span>David Karle d/b/a DKAI</span>
+      <a href="mailto:david@dkai.io">david@dkai.io</a>
+      <a href="tel:+18088078838">(808) 807-8838</a>
+      <span>1604 E 33rd St, Vancouver, WA 98663</span>
+    </p>
     <span>&copy; 2026 DKAI. AI tools set up and looked after for small local businesses.</span>
     <nav class="foot-links" aria-label="Footer">
       <a href="/privacy-policy" aria-current="page">Privacy Policy</a>
